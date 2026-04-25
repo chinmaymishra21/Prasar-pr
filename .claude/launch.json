@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "prasar-webapp",
+      "runtimeExecutable": "C:/Program Files/Git/usr/bin/bash.exe",
+      "runtimeArgs": ["-c", "cd 'C:/Users/USER/Desktop/prasar-webapp/frontend-design/prasar-webapp' && node node_modules/vite/bin/vite.js --host"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}

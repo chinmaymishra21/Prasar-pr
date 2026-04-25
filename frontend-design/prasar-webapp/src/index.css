@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to   { background-position: 350% 50%, 350% 50%; }
+}
+
+.aurora-animate {
+  animation: aurora 60s linear infinite;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #F5F4F0;
+    color: #333333;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #F5F4F0; }
+::-webkit-scrollbar-thumb { background: #0A1F44; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #D48842; }
+
+/* Text selection */
+::selection { background: #0A1F44; color: #ffffff; }
+
+/* Typography */
+.font-display { font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; }
+
+/* Fade-in on scroll */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Focus ring — visible, brand-coloured */
+:focus-visible {
+    outline: 2px solid #D48842;
+    outline-offset: 3px;
+}
+
+/* Smooth transitions */
+button, a {
+    transition: all 0.2s ease;
+}
+
+/* Marquee / ticker animation */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 18s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track {
+  overflow-x: hidden;
+  overflow-y: visible;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}

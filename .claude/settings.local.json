@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__Claude_Preview__preview_start",
+      "Bash(netstat -ano)",
+      "Bash(taskkill /PID 19944 /F)",
+      "Bash(cmd.exe /c \"taskkill /PID 19944 /F\")",
+      "Bash(cmd.exe /c \"taskkill /F /PID 19944 && echo killed\")",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(xargs grep:*)",
+      "Bash(npm init:*)",
+      "Bash(grep -r \"bounce\\\\|scroll\\\\|animation\\\\|keyframes\" /c/Users/USER/Desktop/prasar-webapp/frontend-design/prasar-webapp/src --include=*.jsx --include=*.js --include=*.css)",
+      "Bash(node -e \"const pkg = require\\(''./node_modules/framer-motion/package.json''\\); console.log\\(pkg.version\\)\")",
+      "Bash(find C:/Users/USER/Desktop/prasar-webapp/frontend-design/prasar-webapp/src -name *.jsx -o -name *.js)",
+      "PowerShell(Get-ChildItem \"$env:TEMP\" | Where-Object { $_.Extension -match '\\\\.\\(jpg|jpeg|png|webp\\)' } | Sort-Object LastWriteTime -Descending | Select-Object -First 10)",
+      "PowerShell(Copy-Item \"C:\\\\Users\\\\USER\\\\Downloads\\\\Gemini_Generated_Image_yyg982yyg982yyg9.png\" \"C:\\\\Users\\\\USER\\\\Desktop\\\\prasar-webapp\\\\frontend-design\\\\prasar-webapp\\\\public\\\\kunal.png\")"
+    ]
+  }
+}
