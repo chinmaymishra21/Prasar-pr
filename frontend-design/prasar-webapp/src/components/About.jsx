@@ -35,7 +35,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="the-brain-trust" ref={ref} className="bg-pearl pt-28 md:pt-36 pb-16 px-6">
+    <section id="the-brain-trust" ref={ref} className="bg-navy pt-28 md:pt-36 pb-16 px-6">
       <div className="max-w-content mx-auto">
 
         {/* Intro */}
@@ -43,15 +43,15 @@ export default function About() {
           <p className="fade-in-up text-ochre text-xs tracking-widest uppercase font-body font-medium mb-4">
             The Brain Trust
           </p>
-          <h2 className="fade-in-up font-display text-3xl md:text-4xl text-navy font-semibold leading-snug mb-6" style={{ transitionDelay: '80ms' }}>
+          <h2 className="fade-in-up font-display text-3xl md:text-4xl text-white font-semibold leading-snug mb-6" style={{ transitionDelay: '80ms' }}>
             Three founding partners. One shared belief.
           </h2>
-          <p className="fade-in-up font-body text-charcoal/75 text-base leading-relaxed" style={{ transitionDelay: '140ms' }}>
+          <p className="fade-in-up font-body text-white/70 text-base leading-relaxed" style={{ transitionDelay: '140ms' }}>
             Prasar PR was founded by three communications professionals who each brought a distinct discipline — and shared a conviction that institutional credibility cannot be manufactured. It must be cultivated, with patience, precision, and genuine community understanding.
           </p>
         </div>
 
-        {/* 2x2 Founder grid */}
+        {/* Founder grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {founders.map((f, i) => (
             <div
@@ -60,7 +60,7 @@ export default function About() {
               style={{ transitionDelay: `${200 + i * 80}ms` }}
             >
               {/* Photo — desaturated */}
-              <div className="w-full aspect-[2/3] overflow-hidden mb-6 bg-navy/10">
+              <div className="w-full aspect-[2/3] overflow-hidden mb-6 bg-white/10">
                 <img
                   src={f.img}
                   alt={f.name}
@@ -70,13 +70,13 @@ export default function About() {
               </div>
               {/* Text */}
               <div className="border-l-2 border-ochre pl-5">
-                <h3 className="font-display text-lg text-navy font-semibold leading-snug mb-1">
+                <h3 className="font-display text-lg text-white font-semibold leading-snug mb-1">
                   {f.name}
                 </h3>
                 <p className="font-body text-ochre text-xs tracking-wide uppercase mb-3">
                   {f.role}
                 </p>
-                <p className="font-body text-charcoal/70 text-sm leading-relaxed">
+                <p className="font-body text-white/60 text-sm leading-relaxed">
                   {f.bio}
                 </p>
               </div>

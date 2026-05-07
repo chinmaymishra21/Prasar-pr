@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import { LiquidButton } from './ui/liquid-glass-button'
 import { ComboBox } from './ui/combo-box'
+import { FeatureCard } from './ui/feature-card'
 
 const EMAILJS_SERVICE_ID = 'service_67t3csz'
 const EMAILJS_TEMPLATE_ID = 'template_vjpzixv'
@@ -95,31 +96,42 @@ export default function Contact() {
   return (
     <section id="contact" ref={ref} className="bg-navy py-28 md:py-36 px-6 min-h-screen">
       <div className="max-w-content mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
 
-          {/* Left — intro */}
+        {/* Header */}
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 mb-12">
           <div>
             <p className="fade-in-up text-ochre text-xs tracking-widest uppercase font-body font-medium mb-4">
               Contact
             </p>
-            <h2 className="fade-in-up font-display text-3xl md:text-4xl text-white font-semibold leading-snug mb-6" style={{ transitionDelay: '80ms' }}>
+            <h2 className="fade-in-up font-display text-3xl md:text-4xl text-white font-semibold leading-snug" style={{ transitionDelay: '80ms' }}>
               Start a Conversation.
             </h2>
-            <p className="fade-in-up font-body text-white/65 text-base leading-relaxed mb-10" style={{ transitionDelay: '140ms' }}>
+          </div>
+          <div className="flex items-end">
+            <p className="fade-in-up font-body text-white/65 text-base leading-relaxed" style={{ transitionDelay: '140ms' }}>
               We work with a select group of clients whose institutions and objectives align with our expertise. If you believe Prasar PR may be the right partner, we would welcome the conversation.
             </p>
-            <div className="fade-in-up space-y-4" style={{ transitionDelay: '200ms' }}>
-              <div>
-                <p className="font-body text-xs tracking-widest uppercase text-white/40 mb-1">Email</p>
-                <a href="mailto:prasarpr02@gmail.com" className="font-body text-sm text-white/80 hover:text-ochre transition-colors duration-200">
-                  prasarpr02@gmail.com
-                </a>
-              </div>
-              <div>
-                <p className="font-body text-xs tracking-widest uppercase text-white/40 mb-1">Location</p>
-                <p className="font-body text-sm text-white/70">New Delhi, India</p>
-              </div>
-            </div>
+          </div>
+        </div>
+
+        {/* Two-column: card + form */}
+        <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
+
+          {/* Left — feature card */}
+          <div className="fade-in-up relative z-0" style={{ transitionDelay: '200ms' }}>
+            <FeatureCard
+              title="What We Deliver"
+              description="A full-spectrum PR engagement built around institutional credibility and narrative precision."
+              items={[
+                'Reputation Architecture',
+                'Institutional Narrative Design',
+                'Media Relations & Counsel',
+                'Grassroots Trust Integration',
+                'Community Engagement Strategy',
+              ]}
+              buttonText="Call Now!"
+              onButtonClick={() => window.location.href = 'tel:+919399909236'}
+            />
           </div>
 
           {/* Right — form */}
@@ -137,7 +149,6 @@ export default function Contact() {
             ) : (
               <form onSubmit={handleSubmit} noValidate className="space-y-5">
 
-                {/* Honeypot */}
                 <input type="text" name="_honey" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
 
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -249,6 +260,22 @@ export default function Contact() {
             )}
           </div>
         </div>
+
+        {/* Email + Location */}
+        <div className="fade-in-up mt-16 flex flex-col sm:flex-row justify-center items-center gap-10 sm:gap-20" style={{ transitionDelay: '300ms' }}>
+          <div className="text-center">
+            <p className="font-body text-xs tracking-widest uppercase text-white/40 mb-1">Email</p>
+            <a href="mailto:prasarpr02@gmail.com" className="font-body text-sm text-white/80 hover:text-ochre transition-colors duration-200">
+              prasarpr02@gmail.com
+            </a>
+          </div>
+          <div className="hidden sm:block w-px h-8 bg-white/10" />
+          <div className="text-center">
+            <p className="font-body text-xs tracking-widest uppercase text-white/40 mb-1">Location</p>
+            <p className="font-body text-sm text-white/70">Raipur, Chhattisgarh</p>
+          </div>
+        </div>
+
       </div>
     </section>
   )

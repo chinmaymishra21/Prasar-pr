@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import EmpathyPivot from './components/EmpathyPivot'
-import Philosophy from './components/Philosophy'
+import Testimonials from './components/Testimonials'
 import Services from './components/Services'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -16,9 +16,9 @@ function App() {
         <main>
           <Hero />
           <EmpathyPivot />
-          <Philosophy />
-          <Services />
+          <Testimonials />
           <About />
+          <Services />
           <Contact />
         </main>
         <Footer />
