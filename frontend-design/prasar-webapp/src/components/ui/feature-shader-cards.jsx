@@ -6,43 +6,51 @@ import {
   BookOpen,
   Radio,
   Heart,
+  Globe,
+  Landmark,
 } from 'lucide-react'
 
 const services = [
   {
-    title: 'Reputation Architecture',
-    for: 'For healthcare institutions and educational bodies seeking lasting public trust.',
-    body: 'We design and execute long-form reputation strategies that embed an institution into the fabric of community confidence — building goodwill that sustains through crisis and change.',
+    title: 'Brand Strategy & Positioning',
+    for: 'Brand positioning · Messaging strategy · Audience identity · Reputation building',
+    body: 'We help brands define how they are perceived, remembered, and trusted through strategic communication and audience-focused branding.',
     icon: <Shield className="w-10 h-10 text-white" />,
   },
   {
-    title: 'Grassroots Trust Integration',
-    for: 'For public figures, political leaders, and civic organisations.',
-    body: 'Trust is not won in press releases. We build it through community relationships, local media stewardship, and hyper-targeted communication that speaks in the language of the people it reaches.',
-    icon: <Users className="w-10 h-10 text-white" />,
-  },
-  {
-    title: 'Resilience Communication',
-    for: 'For institutions navigating sensitive transitions, crises, or reputational challenges.',
-    body: 'When circumstances demand precision under pressure, Prasar PR architects messaging frameworks that protect institutional credibility, preserve stakeholder confidence, and create the conditions for recovery.',
-    icon: <Zap className="w-10 h-10 text-white" />,
-  },
-  {
-    title: 'Institutional Narrative Design',
-    for: 'For organisations seeking a foundational story that endures.',
-    body: 'We work at the level of identity — helping institutions articulate why they exist, who they serve, and what they stand for — creating a narrative foundation that all future communications can be built upon.',
-    icon: <BookOpen className="w-10 h-10 text-white" />,
-  },
-  {
-    title: 'Media Relations & Counsel',
-    for: 'For leaders who must communicate with authority and discretion.',
-    body: 'We manage relationships with regional and national media on behalf of our clients — positioning spokespeople, crafting statements, and ensuring that every public-facing moment reinforces institutional credibility.',
+    title: 'Public Relations & Media Communication',
+    for: 'Media outreach · Press coverage · Founder profiling · Reputation management',
+    body: 'Strategic media communication designed to build visibility, credibility, and meaningful public presence.',
     icon: <Radio className="w-10 h-10 text-white" />,
   },
   {
-    title: 'Community Engagement Strategy',
-    for: 'For institutions with an active stake in their local community.',
-    body: 'We design engagement programmes that move beyond transactional outreach — creating genuine points of connection between institutions and the communities they serve.',
+    title: 'Social Media & Digital Communication',
+    for: 'Social media management · Content strategy · Campaign execution · Digital storytelling',
+    body: 'Modern digital communication focused on storytelling, audience engagement, and sustainable platform growth.',
+    icon: <Globe className="w-10 h-10 text-white" />,
+  },
+  {
+    title: 'Marketing & Campaign Strategy',
+    for: 'Campaign planning · Brand campaigns · Audience targeting · Strategic promotions',
+    body: 'Integrated campaigns designed to strengthen brand presence and audience connection across platforms.',
+    icon: <Zap className="w-10 h-10 text-white" />,
+  },
+  {
+    title: 'Political & Public Communication',
+    for: 'Public narrative building · Campaign messaging · Constituency communication',
+    body: 'Communication strategies built for public leaders, campaigns, and constituency engagement.',
+    icon: <Landmark className="w-10 h-10 text-white" />,
+  },
+  {
+    title: 'Corporate Communication',
+    for: 'Internal communication · Leadership positioning · Crisis communication',
+    body: 'Structured communication solutions for organizations, leadership teams, and institutions.',
+    icon: <Users className="w-10 h-10 text-white" />,
+  },
+  {
+    title: 'Creative Branding & Storytelling',
+    for: 'Creative direction · Visual branding · Campaign creatives · Brand storytelling',
+    body: 'Creative execution designed to strengthen visual identity, audience recall, and brand storytelling.',
     icon: <Heart className="w-10 h-10 text-white" />,
   },
 ]

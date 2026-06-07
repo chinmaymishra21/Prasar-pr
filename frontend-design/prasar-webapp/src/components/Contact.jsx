@@ -1,27 +1,16 @@
 import { useState, useRef, useEffect } from 'react'
 import emailjs from '@emailjs/browser'
 import { LiquidButton } from './ui/liquid-glass-button'
-import { ComboBox } from './ui/combo-box'
 import { FeatureCard } from './ui/feature-card'
 
 const EMAILJS_SERVICE_ID = 'service_67t3csz'
 const EMAILJS_TEMPLATE_ID = 'template_vjpzixv'
 const EMAILJS_PUBLIC_KEY = 'e6aZ8pMsfS1TVGRkz'
 
-const ENQUIRY_OPTIONS = [
-  'Reputation Architecture',
-  'Grassroots Trust Integration',
-  'Resilience Communication',
-  'Institutional Narrative Design',
-  'Media Relations & Counsel',
-  'Community Engagement Strategy',
-  'General Enquiry',
-]
-
 export default function Contact() {
   const ref = useRef(null)
   const [form, setForm] = useState({
-    name: '', organisation: '', role: '', email: '', phone: '', enquiry: '', message: '',
+    name: '', organisation: '', email: '', phone: '', message: '',
   })
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
@@ -40,12 +29,10 @@ export default function Contact() {
   const validate = () => {
     const e = {}
     if (!form.name.trim()) e.name = 'Full name is required.'
-    if (!form.organisation.trim()) e.organisation = 'Organisation is required.'
-    if (!form.role.trim()) e.role = 'Your role is required.'
+    if (!form.organisation.trim()) e.organisation = 'Organization / Brand is required.'
     if (!form.email.trim()) e.email = 'Email address is required.'
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = 'Please enter a valid email address.'
-    if (!form.enquiry) e.enquiry = 'Please select a nature of enquiry.'
-    if (!form.message.trim()) e.message = 'A brief message is required.'
+    if (!form.message.trim()) e.message = 'Please describe your requirement.'
     return e
   }
 
@@ -70,10 +57,8 @@ export default function Contact() {
         {
           from_name: form.name,
           organisation: form.organisation,
-          role: form.role,
           reply_to: form.email,
           phone: form.phone || '—',
-          enquiry: form.enquiry,
           message: form.message,
         },
         EMAILJS_PUBLIC_KEY
@@ -104,13 +89,18 @@ export default function Contact() {
               Contact
             </p>
             <h2 className="fade-in-up font-display text-3xl md:text-4xl text-white font-semibold leading-snug" style={{ transitionDelay: '80ms' }}>
-              Start a Conversation.
+              Let's Build Something People Remember
             </h2>
           </div>
           <div className="flex items-end">
-            <p className="fade-in-up font-body text-white/65 text-base leading-relaxed" style={{ transitionDelay: '140ms' }}>
-              We work with a select group of clients whose institutions and objectives align with our expertise. If you believe Prasar PR may be the right partner, we would welcome the conversation.
-            </p>
+            <div>
+              <p className="fade-in-up font-body text-white/65 text-base leading-relaxed mb-3" style={{ transitionDelay: '140ms' }}>
+                Whether you're growing a brand, building public trust, or scaling digital visibility — we help you communicate with clarity, strategy, and impact.
+              </p>
+              <p className="fade-in-up font-body text-ochre/80 text-sm" style={{ transitionDelay: '180ms' }}>
+                ✔ First consultation absolutely free.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -120,14 +110,14 @@ export default function Contact() {
           {/* Left — feature card */}
           <div className="fade-in-up relative z-0" style={{ transitionDelay: '200ms' }}>
             <FeatureCard
-              title="What We Deliver"
-              description="A full-spectrum PR engagement built around institutional credibility and narrative precision."
+              title="What We Offer"
+              description="Tailored communication strategies built around your brand, audience, and growth objectives."
               items={[
-                'Reputation Architecture',
-                'Institutional Narrative Design',
-                'Media Relations & Counsel',
-                'Grassroots Trust Integration',
-                'Community Engagement Strategy',
+                'Brand Strategy & Positioning',
+                'Public Relations & Media Communication',
+                'Social Media & Digital Communication',
+                'Marketing & Campaign Strategy',
+                'Corporate Communication',
               ]}
               buttonText="Call Now!"
               onButtonClick={() => window.location.href = 'tel:+919399909236'}
@@ -165,11 +155,11 @@ export default function Contact() {
                   </div>
                   <div>
                     <label htmlFor="organisation" className="block font-body text-xs tracking-wide text-white/60 mb-1.5">
-                      Organisation <span className="text-ochre">*</span>
+                      Organization / Brand <span className="text-ochre">*</span>
                     </label>
                     <input
                       id="organisation" name="organisation" type="text" value={form.organisation}
-                      onChange={handleChange} placeholder="Your institution or organisation"
+                      onChange={handleChange} placeholder="Your organization or brand"
                       className={fieldClass('organisation')}
                     />
                     {errors.organisation && <p className="mt-1 text-xs text-red-500 font-body">{errors.organisation}</p>}
@@ -178,63 +168,36 @@ export default function Contact() {
 
                 <div className="grid sm:grid-cols-2 gap-5">
                   <div>
-                    <label htmlFor="role" className="block font-body text-xs tracking-wide text-white/60 mb-1.5">
-                      Role / Designation <span className="text-ochre">*</span>
-                    </label>
-                    <input
-                      id="role" name="role" type="text" value={form.role}
-                      onChange={handleChange} placeholder="Your role"
-                      className={fieldClass('role')}
-                    />
-                    {errors.role && <p className="mt-1 text-xs text-red-500 font-body">{errors.role}</p>}
-                  </div>
-                  <div>
                     <label htmlFor="email" className="block font-body text-xs tracking-wide text-white/60 mb-1.5">
                       Email Address <span className="text-ochre">*</span>
                     </label>
                     <input
                       id="email" name="email" type="email" value={form.email}
-                      onChange={handleChange} placeholder="you@institution.com"
+                      onChange={handleChange} placeholder="you@yourbrand.com"
                       className={fieldClass('email')}
                     />
                     {errors.email && <p className="mt-1 text-xs text-red-500 font-body">{errors.email}</p>}
                   </div>
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block font-body text-xs tracking-wide text-white/60 mb-1.5">
-                    Phone Number <span className="text-white/30">(optional)</span>
-                  </label>
-                  <input
-                    id="phone" name="phone" type="tel" value={form.phone}
-                    onChange={handleChange} placeholder="+91 98765 43210"
-                    className={fieldClass('phone')}
-                  />
-                </div>
-
-                <div>
-                  <label className="block font-body text-xs tracking-wide text-white/60 mb-1.5">
-                    Nature of Enquiry <span className="text-ochre">*</span>
-                  </label>
-                  <ComboBox
-                    name="enquiry"
-                    options={ENQUIRY_OPTIONS}
-                    value={form.enquiry}
-                    onChange={handleChange}
-                    placeholder="Select an area of interest…"
-                    error={!!errors.enquiry}
-                  />
-                  {errors.enquiry && <p className="mt-1 text-xs text-red-500 font-body">{errors.enquiry}</p>}
+                  <div>
+                    <label htmlFor="phone" className="block font-body text-xs tracking-wide text-white/60 mb-1.5">
+                      Phone Number <span className="text-white/30">(optional)</span>
+                    </label>
+                    <input
+                      id="phone" name="phone" type="tel" value={form.phone}
+                      onChange={handleChange} placeholder="+91 98765 43210"
+                      className={fieldClass('phone')}
+                    />
+                  </div>
                 </div>
 
                 <div>
                   <label htmlFor="message" className="block font-body text-xs tracking-wide text-white/60 mb-1.5">
-                    Message / Brief <span className="text-ochre">*</span>
+                    Your Requirement <span className="text-ochre">*</span>
                   </label>
                   <textarea
                     id="message" name="message" rows={5} value={form.message}
                     onChange={handleChange}
-                    placeholder="Briefly describe your institution and the communication challenge you are navigating."
+                    placeholder="Tell us about your brand and what you're looking to achieve."
                     className={`${fieldClass('message')} resize-none`}
                   />
                   {errors.message && <p className="mt-1 text-xs text-red-500 font-body">{errors.message}</p>}

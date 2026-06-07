@@ -19,23 +19,22 @@ export default function EmpathyPivot() {
 
   return (
     <section
-      id="our-approach"
+      id="about"
       ref={ref}
-      className="bg-navy py-28 md:py-36 px-6 min-h-screen"
+      className="bg-navy -mt-16 lg:-mt-24 py-28 md:py-36 px-6"
     >
       <div className="max-w-content mx-auto">
         <div className="max-w-3xl mx-auto text-center">
 
           {/* Section label */}
           <p className="fade-in-up text-ochre text-xs tracking-widest uppercase font-body font-medium mb-10">
-            The Empathy Pivot
+            About Us
           </p>
 
-          {/* Pull quote */}
-          <blockquote className="fade-in-up font-display text-3xl md:text-4xl lg:text-5xl text-white font-semibold leading-snug mb-10" style={{ transitionDelay: '80ms' }}>
-            "Visibility without trust is noise.<br />
-            <em className="not-italic text-white/65">Trust without visibility is silence.</em>"
-          </blockquote>
+          {/* Heading */}
+          <h2 className="fade-in-up font-display text-3xl md:text-4xl lg:text-5xl text-white font-semibold leading-snug mb-10" style={{ transitionDelay: '80ms' }}>
+            Communication Built Around Strategy, Trust &amp; Growth
+          </h2>
 
           {/* Divider */}
           <div className="fade-in-up flex justify-center mb-10" style={{ transitionDelay: '160ms' }}>
@@ -44,10 +43,16 @@ export default function EmpathyPivot() {
 
           {/* Body */}
           <p className="fade-in-up font-body text-white/80 text-lg leading-relaxed mb-6" style={{ transitionDelay: '200ms' }}>
-            Traditional broadcast media tells communities what to think. Prasar PR builds the conditions in which communities choose to believe — a far more durable outcome.
+            At Prasar PR, we believe communication is more than visibility — it is how brands build trust, shape perception, and create long-term growth.
           </p>
-          <p className="fade-in-up font-body text-white/60 text-base leading-relaxed" style={{ transitionDelay: '260ms' }}>
-            Healthcare institutions, educational bodies, and political leaders operate at the intersection of public confidence and operational credibility. They do not need louder voices. They need more precise ones — rooted in local relationships, institutional respect, and a deep understanding of the community they serve.
+          <p className="fade-in-up font-body text-white/60 text-base leading-relaxed mb-6" style={{ transitionDelay: '260ms' }}>
+            We work across branding, strategic communication, public relations, digital storytelling, and audience engagement to help organizations create meaningful and lasting impact.
+          </p>
+          <p className="fade-in-up font-body text-white/60 text-base leading-relaxed mb-6" style={{ transitionDelay: '300ms' }}>
+            From emerging brands and institutions to public leaders and purpose-driven organizations, we develop communication systems that connect with audiences through clarity, relevance, and cultural understanding.
+          </p>
+          <p className="fade-in-up font-body text-white/60 text-base leading-relaxed" style={{ transitionDelay: '340ms' }}>
+            Our approach combines strategic thinking with modern execution — blending communication strategy, branding, media relations, digital growth, and storytelling into campaigns that drive real influence and engagement.
           </p>
         </div>
       </div>

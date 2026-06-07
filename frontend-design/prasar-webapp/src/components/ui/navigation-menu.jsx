@@ -7,9 +7,10 @@ import { useScrollContext } from "./smooth-scroll";
 
 const navItems = [
   { name: "Home", id: "home" },
-  { name: "Our Approach", id: "our-approach" },
-  { name: "Strategic Solutions", id: "strategic-solutions" },
+  { name: "About", id: "about" },
+  { name: "Services", id: "strategic-solutions" },
   { name: "The Brain Trust", id: "the-brain-trust" },
+  { name: "Contact", id: "contact" },
 ];
 
 const EXPAND_SCROLL_THRESHOLD = 80;
@@ -116,7 +117,7 @@ export function AnimatedNav() {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
-    const sectionIds = ["home", "our-approach", "strategic-solutions", "the-brain-trust", "contact"];
+    const sectionIds = ["home", "about", "strategic-solutions", "the-brain-trust", "contact"];
 
     const onScroll = () => {
       const latest = wrapper.scrollTop;

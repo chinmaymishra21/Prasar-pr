@@ -6,18 +6,28 @@ import { useScrollContext } from './ui/smooth-scroll'
 const pillars = [
   {
     number: '01',
-    title: 'Narrative Precision',
-    body: 'Every message is architected, not improvised. We identify the single truth that an institution needs its community to understand — and we build every communication around it with surgical consistency.',
+    title: 'Strategy Beyond Visibility',
+    body: 'We focus on building long-term communication value instead of temporary hype or surface-level attention.',
   },
   {
     number: '02',
-    title: 'Institutional Integrity',
-    body: 'Our counsel is grounded in the long-term reputation of our clients, not short-term optics. We protect what institutions have built over years — and extend it with care.',
+    title: 'Integrated Brand Thinking',
+    body: 'Branding, communication, digital strategy, and audience engagement work together seamlessly under one approach.',
   },
   {
     number: '03',
-    title: 'Hyper-Local Empathy',
-    body: 'Trust is built at the street level, not from a broadcast tower. We immerse ourselves in the local context of every client — understanding cultural nuance, community relationships, and the specific expectations of the people who matter most.',
+    title: 'Rooted Yet Scalable',
+    body: 'We understand regional narratives while building communication that connects on a larger scale.',
+  },
+  {
+    number: '04',
+    title: 'Human-Centered Storytelling',
+    body: 'Every campaign is built around relevance, emotion, and meaningful audience connection.',
+  },
+  {
+    number: '05',
+    title: 'Modern Yet Trust-Driven',
+    body: 'We combine modern communication strategies with consistency, credibility, and strategic thinking.',
   },
 ]
 
@@ -43,17 +53,17 @@ export default function Services() {
     <section id="strategic-solutions" ref={ref} className="bg-pearl py-28 md:py-36 px-6">
       <div className="max-w-content mx-auto">
 
-        {/* ── The Architecture of Trust ── */}
+        {/* ── Why Prasar PR ── */}
         <div className="max-w-xl mb-16 md:mb-20">
           <p className="fade-in-up text-ochre text-xs tracking-widest uppercase font-body font-medium mb-4">
-            The Architecture of Trust
+            Why Prasar PR
           </p>
           <h2 className="fade-in-up font-display text-3xl md:text-4xl text-navy font-semibold leading-snug" style={{ transitionDelay: '80ms' }}>
-            How we build what others only promise.
+            Built For Modern Communication Needs
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 md:gap-10 mb-24 md:mb-32">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 mb-24 md:mb-32">
           {pillars.map((p, i) => (
             <div
               key={p.number}
@@ -81,18 +91,15 @@ export default function Services() {
           <span className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-ochre" />
         </div>
 
-        {/* ── Strategic Solutions ── */}
+        {/* ── What We Do ── */}
         <div className="max-w-2xl mb-4">
           <p className="fade-in-up text-ochre text-xs tracking-widest uppercase font-body font-medium mb-4">
-            Strategic Solutions
+            What We Do
           </p>
-          <h2 className="fade-in-up font-display text-3xl md:text-4xl text-navy font-semibold leading-snug mb-4" style={{ transitionDelay: '80ms' }}>
-            Advisory engagements, not service packages.
+          <h2 className="fade-in-up font-display text-3xl md:text-4xl text-navy font-semibold leading-snug mb-16 md:mb-20" style={{ transitionDelay: '80ms' }}>
+            Communication &amp; Growth Solutions
           </h2>
         </div>
-        <p className="fade-in-up font-body text-charcoal/70 text-base leading-relaxed max-w-xl mb-16 md:mb-20" style={{ transitionDelay: '140ms' }}>
-          We do not take on every client. We take on the right ones.
-        </p>
 
         <FeatureShaderCards />
 
@@ -102,7 +109,7 @@ export default function Services() {
             size="lg"
             className="text-navy font-medium tracking-wide"
           >
-            Explore Our Approach
+            Start a Conversation
           </LiquidButton>
         </div>
 

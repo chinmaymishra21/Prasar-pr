@@ -3,8 +3,8 @@ import { useScrollContext } from './ui/smooth-scroll'
 
 const navLinks = [
   { label: 'Home', id: 'home' },
-  { label: 'Our Approach', id: 'our-approach' },
-  { label: 'Strategic Solutions', id: 'strategic-solutions' },
+  { label: 'About', id: 'about' },
+  { label: 'Services', id: 'strategic-solutions' },
   { label: 'The Brain Trust', id: 'the-brain-trust' },
   { label: 'Contact', id: 'contact' },
 ]
@@ -40,11 +40,8 @@ export default function Footer() {
                 <img src="/prasar-logo-new.svg" alt="" className="h-7 w-7" aria-hidden="true" />
                 <span className="font-display font-semibold tracking-widest text-sm text-navy">PRASAR PR</span>
               </div>
-              <p className="font-body text-charcoal/70 text-sm leading-relaxed max-w-xs mb-2">
-                Rooted in Trust.
-              </p>
-              <p className="font-body text-charcoal/50 text-xs leading-relaxed max-w-xs">
-                Strategic public relations for healthcare, educational, and civic institutions.
+              <p className="font-body text-charcoal/60 text-sm leading-relaxed max-w-xs">
+                Modern communication and brand growth solutions driven by strategy, storytelling, and audience connection.
               </p>
             </div>
 

@@ -151,7 +151,7 @@ export function BeamsBackground({
       <canvas
         ref={canvasRef}
         className="absolute inset-0"
-        style={{ filter: "blur(40px)" }}
+        style={{ filter: "blur(40px)", pointerEvents: "none" }}
       />
 
 

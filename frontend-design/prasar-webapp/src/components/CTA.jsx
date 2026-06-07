@@ -1,90 +1,51 @@
-import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
+import { useEffect, useRef } from 'react'
 import { LiquidButton } from './ui/liquid-glass-button'
+import { useScrollContext } from './ui/smooth-scroll'
 
 export default function CTA() {
-  const { ref, inView } = useInView({
-    threshold: 0.3,
-    triggerOnce: true,
-  })
+  const { lenisRef } = useScrollContext()
+  const ref = useRef(null)
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add('visible') }),
+      { threshold: 0.15 }
+    )
+    ref.current?.querySelectorAll('.fade-in-up').forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: 'easeOut' },
-    },
+  const goToContact = () => {
+    const el = document.getElementById('contact')
+    if (el && lenisRef.current) lenisRef.current.scrollTo(el)
   }
 
   return (
-    <section className="py-20 md:py-32 px-6 bg-gradient-to-r from-black-primary via-black-secondary to-black-tertiary text-white relative overflow-hidden">
-      {/* Background Effect */}
-      <div className="absolute inset-0 opacity-10" style={{
-        backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,.05) 10px, rgba(255,255,255,.05) 20px)',
+    <section ref={ref} className="py-28 md:py-36 px-6 bg-navy text-white relative overflow-hidden">
+      {/* Ochre radial glow */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'radial-gradient(ellipse at 50% 60%, rgba(212,136,66,0.10) 0%, transparent 65%)',
       }} />
 
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? 'visible' : 'hidden'}
-        className="max-w-4xl mx-auto text-center relative z-10"
-      >
-        <motion.h2
-          variants={itemVariants}
-          className="font-display text-4xl md:text-6xl font-bold mb-6"
-        >
-          Ready to Transform Your Brand?
-        </motion.h2>
-
-        <motion.p
-          variants={itemVariants}
-          className="text-xl md:text-2xl text-white/80 mb-12 leading-relaxed"
-        >
-          Let's discuss how Prasar can help you achieve your business goals.
-        </motion.p>
-
-        <motion.div
-          variants={itemVariants}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
-        >
-          <LiquidButton
-            size="xl"
-            className="text-white font-bold tracking-wide"
-          >
-            Schedule a Consultation
+      <div className="max-w-4xl mx-auto text-center relative z-10">
+        <p className="fade-in-up text-ochre text-xs tracking-widest uppercase font-body font-medium mb-6">
+          Get Started
+        </p>
+        <h2 className="fade-in-up font-display text-4xl md:text-5xl lg:text-6xl text-white font-semibold leading-snug mb-6" style={{ transitionDelay: '80ms' }}>
+          Ready To Strengthen Your Brand Communication?
+        </h2>
+        <p className="fade-in-up font-body text-white/70 text-lg md:text-xl leading-relaxed mb-12" style={{ transitionDelay: '160ms' }}>
+          Let's create communication strategies that build visibility, trust, and long-term growth.
+        </p>
+        <div className="fade-in-up flex flex-col sm:flex-row gap-4 justify-center" style={{ transitionDelay: '240ms' }}>
+          <LiquidButton size="xl" className="text-ochre font-medium tracking-wide" onClick={goToContact}>
+            Start a Conversation
           </LiquidButton>
-          <LiquidButton
-            size="xl"
-            className="text-white font-bold tracking-wide"
-          >
-            View Case Studies
+          <LiquidButton size="xl" className="text-white/80 font-medium tracking-wide" onClick={goToContact}>
+            Book Free Consultation
           </LiquidButton>
-        </motion.div>
-      </motion.div>
-
-      {/* Decorative Elements */}
-      <motion.div
-        className="absolute top-10 right-10 w-32 h-32 border border-white/20 rounded-full opacity-30"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-      />
-      <motion.div
-        className="absolute bottom-10 left-10 w-24 h-24 border border-white/20 opacity-30"
-        animate={{ rotate: -360 }}
-        transition={{ duration: 15, repeat: Infinity, ease: 'linear' }}
-      />
+        </div>
+      </div>
     </section>
   )
 }
